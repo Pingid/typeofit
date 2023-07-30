@@ -1,6 +1,6 @@
 {
   "name": "typeofit",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A tiny composable type guard utility library",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

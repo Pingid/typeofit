@@ -142,7 +142,7 @@ export const or = <T extends Guard<any>[]>(...of: T) => is<TypeOfGuard<T[number]
 export const tp = {
   is: is,
   string: string,
-  bool: bool,
+  boolean: bool,
   symbol: symb,
   object: object,
   number: number,
