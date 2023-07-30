@@ -37,30 +37,30 @@ npm install my-type-guards-library
 
 ## Usage
 ```typescript
-import * as is from 'typeofit'
+import { tp } from 'typeofit'
 
 const unknown: unknown;
 
-if (is.string(unknown)) // string
+if (tp.string(unknown)) // string
 
-if (is.number(unknown)) // number
+if (tp.number(unknown)) // number
 
-if (is.array()(unknown)) // unknown[]
+if (tp.array()(unknown)) // unknown[]
 
-if (is.array(is.string)(unknown)) // string[]
+if (tp.array(tp.string)(unknown)) // string[]
 
-if (is.record()(unknown)) // Record<string, any>
+if (tp.record()(unknown)) // Record<string, any>
 
-if (is.record(is.literal('foo'), is.number)(unknown)) // { foo: number }
+if (tp.record(tp.literal('foo'), tp.number)(unknown)) // { foo: number }
 
-if (is.tuple(is.literal('foo'), is.literal(10))(unknown)) // ['foo', 10]
+if (tp.tuple(tp.literal('foo'), tp.literal(10))(unknown)) // ['foo', 10]
 
-if (is.struct({ foo: is.literal('bar') })(unknown)) // { foo: 'bar' }
+if (tp.struct({ foo: tp.literal('bar') })(unknown)) // { foo: 'bar' }
 
-if (is.or(is.literal('foo'), is.literal('bar'))(unknown)) // 'foo' | 'bar'
+if (tp.or(tp.literal('foo'), tp.literal('bar'))(unknown)) // 'foo' | 'bar'
 
 const items: (number | null)[]
-const defined = items.filter(is.defined) // number[]
+const defined = items.filter(tp.defined) // number[]
 ```
 ## API Reference
 

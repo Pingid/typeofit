@@ -20,6 +20,18 @@ export const is =
 export const string = is<string>((t) => typeof t === 'string')
 
 /**
+ * The function checks if a value is of type boolean.
+ * @param {unknown} value - The parameter "value" is of type "unknown", which means it can be any type.
+ */
+export const bool = is<boolean>((t) => typeof t === 'boolean')
+
+/**
+ * The function checks if a value is of type symbol.
+ * @param {unknown} value - The parameter "value" is of type "unknown", which means it can be any type.
+ */
+export const symb = is<symbol>((t) => typeof t === 'symbol')
+
+/**
  * The function checks if a value is of type object.
  * @param {unknown} value - The parameter "value" is of type "unknown", which means it can be any type.
  */
@@ -126,3 +138,22 @@ export const defined = <T>(x: T | undefined | null): x is T => x !== null && !un
  * @param {T} of - The `of` parameter is a rest parameter that accepts an array of `Guard` types.
  */
 export const or = <T extends Guard<any>[]>(...of: T) => is<TypeOfGuard<T[number]>>((t) => of.some((y) => y(t)))
+
+export const tp = {
+  is: is,
+  string: string,
+  bool: bool,
+  symbol: symb,
+  object: object,
+  number: number,
+  undefined: undef,
+  function: func,
+  null: nul,
+  literal: literal,
+  array: array,
+  tuple: tuple,
+  record: record,
+  struct: struct,
+  defined: defined,
+  or: or,
+}
