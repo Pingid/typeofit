@@ -29,6 +29,7 @@ it('tuple', () => (
 it('record', () => (
   expect(record()({})).toBe(true),
   expect(record()([])).toBe(false),
+  expect(record()(NaN)).toBe(false),
   expect(record(literal('123'), number)({ '123': 10 })).toBe(true),
   expect(record(literal('123'), string)({ '123': 10 })).toBe(false),
   expect(record(literal('123'))({ '123': 10 })).toBe(true)
