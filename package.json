@@ -1,6 +1,6 @@
 {
   "name": "typeofit",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A tiny composable type guard utility library",
   "type": "module",
   "main": "lib/cjs/index.js",

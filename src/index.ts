@@ -62,6 +62,11 @@ export const literal = <const T extends any>(of: T) => is<T>((t) => t === of)
 export const date = is<Function>((t) => t instanceof Date)
 
 /**
+ * Checks if a value is an Error.
+ */
+export const error = is<Function>((t) => t instanceof Error)
+
+/**
  * Checks if a value is an array and optionally matches a type guard.
  */
 export const array = <T = any>(of?: Guard<T>) => is<T[]>((t) => Array.isArray(t) && (of ? t.every(of) : true))
@@ -117,6 +122,7 @@ export const tp = {
   null: nul,
   literal: literal,
   date: date,
+  error: error,
   array: array,
   tuple: tuple,
   record: record,
